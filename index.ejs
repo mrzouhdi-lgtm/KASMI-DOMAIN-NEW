@@ -1,0 +1,69 @@
+<%- include('includes/header') %>
+
+        <form id="newsForm">
+            <div class="form-group">
+                <label for="geminiApiKey">Gemini API Key (Required):</label>
+                <input type="text" id="geminiApiKey" name="geminiApiKey" placeholder="Your Gemini API Key" required>
+            </div>
+            <div class="form-group">
+                <label for="mediastackApiKey">MediaStack API Key:</label>
+                <input type="text" id="mediastackApiKey" name="mediastackApiKey" placeholder="Your MediaStack API Key">
+            </div>
+            <div class="form-group">
+                <label for="gnewsApiKey">GNews API Key:</label>
+                <input type="text" id="gnewsApiKey" name="gnewsApiKey" placeholder="Your GNews API Key">
+            </div>
+            <div class="form-group">
+                <label for="newsapiApiKey">NewsAPI Key:</label>
+                <input type="text" id="newsapiApiKey" name="newsapiApiKey" placeholder="Your NewsAPI Key">
+            </div>
+            <div class="form-group">
+                <label for="currentsApiKey">Currents API Key:</label>
+                <input type="text" id="currentsApiKey" name="currentsApiKey" placeholder="Your Currents API Key">
+            </div>
+
+            <div class="form-group">
+                <label for="newsTimeRange">News Time Range:</label>
+                <select id="newsTimeRange" name="newsTimeRange">
+                    <option value="24h">Last 24 Hours</option>
+                    <option value="week">Last Week</option>
+                    <option value="month">Last Month</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="articleFetchDepth">Article Fetch Depth:</label>
+                <select id="articleFetchDepth" name="articleFetchDepth">
+                    <option value="light">Light (Titles & Descriptions)</option>
+                    <option value="deep">Deep (Full Content if available)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="maxWordsInDomain">Max Words in Domain:</label>
+                <input type="number" id="maxWordsInDomain" name="maxWordsInDomain" value="3" min="1" max="5">
+            </div>
+            <div class="form-group">
+                <label for="tld">TLD:</label>
+                <input type="text" id="tld" name="tld" value="com" placeholder="e.g., com, net, org">
+            </div>
+            <div class="form-group">
+                <label for="numberOfDomains">Number of Domains to Generate:</label>
+                <input type="number" id="numberOfDomains" name="numberOfDomains" value="5" min="1" max="20">
+            </div>
+
+            <button type="submit">Generate Domain Names</button>
+        </form>
+
+        <h2>Generated Domain Suggestions</h2>
+        <table class="results-table" id="resultsTable">
+            <thead>
+                <tr>
+                    <th>Suggested Domain</th>
+                    <th>Reasoning from AI</th>
+                    <th>Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+<%- include('includes/footer') %>
